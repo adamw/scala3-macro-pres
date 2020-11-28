@@ -11,7 +11,7 @@ object S200_Summary:
 
   /*
   Links:
-  - [this presentation](https://github.com/adamw/eyeballs-pres)
+  - [this presentation](https://github.com/adamw/scala3-macro-pres)
   - [Scala 3 docs](https://dotty.epfl.ch/docs/Metaprogramming/index.html)
   - [Starting with Scala 3 macros: a short tutorial](https://blog.softwaremill.com/starting-with-scala-3-macros-a-short-tutorial-88e9d2b2584c)
   - [Princess Dotty, Sir Jon and the Queen of Reflection](https://blog.philipp-martini.de/blog/magic-mirror-scala3/)

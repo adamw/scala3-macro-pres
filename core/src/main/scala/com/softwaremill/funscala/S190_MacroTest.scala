@@ -1,6 +1,7 @@
 package com.softwaremill.funscala
 
-object S190_MacroTest extends App:
+object S190_MacroTest extends App :
+
   import S190_Macro.timed
 
   def f(n: Int) = {
