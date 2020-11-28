@@ -11,9 +11,17 @@ object S190_Macro:
       try $expr
       finally {
         val end = System.currentTimeMillis()
-        val exprAsString = ${Expr(expr.show)}.replaceAll("\\s+", " ").trim()
+        val exprAsString = ${Expr(exprAsCompactString(expr))}.replaceAll("\\s+", " ").trim()
         val exprAsStringShort = if (exprAsString.length > 50) exprAsString.take(50)+"..." else exprAsString
         println(s"Evaluating $exprAsStringShort took: ${end-start}ms")
       }
     }
+    
+  private def exprAsCompactString[T: Type](expr: Expr[T])(using ctx: QuoteContext): String = {
+    import ctx.tasty.{Inlined, Apply}
+    expr.unseal match {
+      case Inlined(_, _, Apply(method, params)) => s"${method.symbol.name}(${params.map(_.show).mkString(",")})"
+      case _ => expr.show
+    }   
+  }
 

@@ -7,7 +7,7 @@ import scala.compiletime.summonFrom
 import scala.compiletime.summonInline
 import scala.compiletime.summonAll
 
-object S180_TypeclassDerivation:
+object S180_TypeclassDerivation extends App:
   trait SafeShow[T]:
     def show(t: T): String
 
