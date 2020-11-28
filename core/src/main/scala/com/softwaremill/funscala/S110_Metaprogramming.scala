@@ -5,7 +5,6 @@ object S110_Metaprogramming {
   
   /*
   Programs become data
-  Programs that manipulate other programs
   
   For example: a compiler, assembler, interpreter, linker
   

@@ -13,10 +13,7 @@ object S120_OtherLanguages:
   }
   
   def templateMetaprogrmaming(): Unit = {
-    /*
-     * C++
-     * Lisp, Scheme
-     */
+    // C++
   }
   
   def cPreprocessor(): Unit = {
