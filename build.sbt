@@ -6,7 +6,7 @@ lazy val commonSettings = Seq(
 
 lazy val rootProject = (project in file("."))
   .settings(commonSettings: _*)
-  .settings(publishArtifact := false, name := "root")
+  .settings(publishArtifact := false, name := "scala3-macro-pres")
   .aggregate(core)
 
 lazy val core: Project = (project in file("core"))

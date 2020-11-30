@@ -40,9 +40,9 @@ object S170_Tuples extends App :
 
   //
 
-  def sequence[TM <: Tuple](tm: TM): Option[InverseMap[TM, Option]] = {
+  def sequence[T <: Tuple](tm: T): Option[InverseMap[T, Option]] = {
     val unwrapped = tm.productIterator.collect { case Some(x) => x }.toArray[Any]
-    if (unwrapped.length == tm.productArity) Some(Tuple.fromArray(unwrapped).asInstanceOf[InverseMap[TM, Option]]) else None
+    if (unwrapped.length == tm.productArity) Some(Tuple.fromArray(unwrapped).asInstanceOf[InverseMap[T, Option]]) else None
   }
 
   val test1: (Option[Int], Option[String], Option[Boolean]) = (Some(1), Some("x"), Some(true))

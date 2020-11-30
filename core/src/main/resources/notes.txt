@@ -1,0 +1,10 @@
+Where are scala macros used?
+https://www.scala-lang.org/blog/2017/11/27/macros.html
+
+shapeless, quill, refined, macwire, quicklens/monocle, magnolia, circe
+
+
+https://github.com/lampepfl/dotty/pull/8011/files
+https://github.com/lampepfl/dotty/issues/8007
+
+https://blog.philipp-martini.de/blog/magic-mirror-scala3/

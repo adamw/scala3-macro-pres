@@ -13,6 +13,7 @@ object S190_Macro:
         val end = System.currentTimeMillis()
         val exprAsString = ${Expr(exprAsCompactString(expr))}.replaceAll("\\s+", " ").trim()
         val exprAsStringShort = if (exprAsString.length > 50) exprAsString.take(50)+"..." else exprAsString
+        // ${Expr(expr.show)}.replaceAll("\\s+", " ").trim()
         println(s"Evaluating $exprAsStringShort took: ${end-start}ms")
       }
     }

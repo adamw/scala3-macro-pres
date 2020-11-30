@@ -11,7 +11,7 @@ object S190_MacroTest extends App :
 
   def test = {
     timed {
-      println("Start")
+      println("Start2")
       Thread.sleep(1000L)
       println("End")
     }

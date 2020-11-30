@@ -8,7 +8,7 @@ object S150_UseCases:
   val magnolia = uri"https://github.com/propensive/magnolia"
   val circe = uri"https://github.com/circe/circe"
   
-  // DSls: translate Scala code to SQL
+  // DSLs: translate Scala code to SQL
   val quill = uri"https://github.com/getquill/quill"
   
   // Type-safer programming
