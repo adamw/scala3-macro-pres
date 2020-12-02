@@ -19,7 +19,7 @@ object S190_Macro:
     }
     
   private def exprAsCompactString[T: Type](expr: Expr[T])(using ctx: QuoteContext): String = {
-    import ctx.tasty.{Inlined, Apply}
+    import ctx.reflect.{Inlined, Apply}
     expr.unseal match {
       case Inlined(_, _, Apply(method, params)) => s"${method.symbol.name}(${params.map(_.show).mkString(",")})"
       case _ => expr.show
