@@ -17,7 +17,7 @@ object Labels extends App:
       val rest = allLabelsNested[tailLabels, tailTypes]
 
       val nested = summonFrom {
-        case given _: Mirror.ProductOf[headType] => List(allLabels[headType])
+        case m: Mirror.ProductOf[headType] => List(allLabels[headType](using m))
         case _ => Nil
       }
 
