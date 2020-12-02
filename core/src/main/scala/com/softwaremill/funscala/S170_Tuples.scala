@@ -40,9 +40,9 @@ object S170_Tuples extends App :
 
   //
 
-  def sequence[T <: Tuple](tm: T): Option[InverseMap[T, Option]] = {
-    val unwrapped = tm.productIterator.collect { case Some(x) => x }.toArray[Any]
-    if (unwrapped.length == tm.productArity) Some(Tuple.fromArray(unwrapped).asInstanceOf[InverseMap[T, Option]]) else None
+  def sequence[T <: Tuple](t: T): Option[InverseMap[T, Option]] = {
+    val unwrapped = t.productIterator.collect { case Some(x) => x }.toArray[Any]
+    if (unwrapped.length == t.productArity) Some(Tuple.fromArray(unwrapped).asInstanceOf[InverseMap[T, Option]]) else None
   }
 
   val test1: (Option[Int], Option[String], Option[Boolean]) = (Some(1), Some("x"), Some(true))
@@ -56,9 +56,9 @@ object S170_Tuples extends App :
 
   //
 
-  def betterSequence[TM <: Tuple](tm: TM)(using TM <:< Map[InverseMap[TM, Option], Option]): Option[InverseMap[TM, Option]] = {
-    val unwrapped = tm.productIterator.collect { case Some(x) => x }.toArray[Any]
-    if (unwrapped.length == tm.productArity) Some(Tuple.fromArray(unwrapped).asInstanceOf[InverseMap[TM, Option]]) else None
+  def betterSequence[T <: Tuple](t: T)(using T <:< Map[InverseMap[T, Option], Option]): Option[InverseMap[T, Option]] = {
+    val unwrapped = t.productIterator.collect { case Some(x) => x }.toArray[Any]
+    if (unwrapped.length == t.productArity) Some(Tuple.fromArray(unwrapped).asInstanceOf[InverseMap[T, Option]]) else None
   }
 
   betterSequence(test1)
