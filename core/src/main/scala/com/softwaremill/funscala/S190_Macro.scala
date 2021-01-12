@@ -1,11 +1,11 @@
 package com.softwaremill.funscala
 
-import scala.quoted.{Expr, QuoteContext, Type}
+import scala.quoted.{Expr, Quotes, Type}
 
 object S190_Macro:
   inline def timed[T](inline expr: T): T = ${timedImpl('expr)}
 
-  private def timedImpl[T: Type](expr: Expr[T])(using QuoteContext): Expr[T] =
+  private def timedImpl[T: Type](expr: Expr[T])(using Quotes): Expr[T] =
     '{
       val start = System.currentTimeMillis()
       try $expr
@@ -18,9 +18,9 @@ object S190_Macro:
       }
     }
     
-  private def exprAsCompactString[T: Type](expr: Expr[T])(using ctx: QuoteContext): String = {
-    import ctx.reflect.{Inlined, Apply}
-    expr.unseal match {
+  private def exprAsCompactString[T: Type](expr: Expr[T])(using ctx: Quotes): String = {
+    import ctx.reflect._
+    expr.asTerm match {
       case Inlined(_, _, Apply(method, params)) => s"${method.symbol.name}(${params.map(_.show).mkString(",")})"
       case _ => expr.show
     }   

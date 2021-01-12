@@ -14,7 +14,7 @@ object S180_TypeclassDerivation extends App:
   object SafeShow:
     // 1. 
     
-    given safeShowAny[T] as SafeShow[T] = new SafeShow[T]:
+    given safeShowAny[T]: SafeShow[T] = new SafeShow[T]:
       def show(t: T) = t.toString
     
     // 2.
