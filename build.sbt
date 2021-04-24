@@ -1,6 +1,6 @@
 lazy val commonSettings = Seq(
   organization := "com.softwaremill.demo",
-  scalaVersion := "3.0.0-M3"
+  scalaVersion := "3.0.0-RC3"
 )
 
 lazy val rootProject = (project in file("."))
@@ -11,4 +11,4 @@ lazy val rootProject = (project in file("."))
 lazy val core: Project = (project in file("core"))
   .settings(commonSettings: _*)
   .settings(name := "core")
-  .settings(libraryDependencies += "com.softwaremill.sttp.model" %% "core" % "1.2.0-RC12")
+  .settings(libraryDependencies += "com.softwaremill.sttp.model" %% "core" % "1.4.4")
